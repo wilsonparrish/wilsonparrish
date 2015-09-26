@@ -3,18 +3,18 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Angular Template</title>
+        <title>Wilson Parrish</title>
+        <link rel="stylesheet" href="assets/styles/homeStyles.css">
+        <link rel="stylesheet" href="assets/styles/blackjackStyles.css">
     </head>
 
     <body ng-app="app">
-        <ul>
-            <li>
-                <a href="#/">Home</a>
-            </li>
-        </ul>
-        <h1>Angular Template</h1>
-        <h3>App wired: {{ true }}</h3>
-        <div ui-view></div>
+        <h3>Wilson Parrish! That's me.</h3>
+        
+        <button ui-sref="blackjack">PLAY SOME BLACKJACK DUDE</button>
+        
+        <div id="mainView" ui-view></div>
+        
         <!-- Dependencies -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -26,6 +26,8 @@
         <script src="app.module.js"></script>
         <script src="app.routes.js"></script>
         <script src="components/home/home.client.controller.js"></script>
+        <script src="modules/blackjack/blackjackCtrl.js"></script>
+        <script src="services/cardsService.js"></script>
     </body>
 
 </html>

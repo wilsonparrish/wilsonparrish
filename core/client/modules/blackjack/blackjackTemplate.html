@@ -1,0 +1,31 @@
+<div id='view'>
+	<!--<button type="button" ng-click="state.reload()">New Game</button>-->
+	<div id="piles">
+		<br>
+		<br>
+		<p>House</p>
+		<div id="house"><img ng-repeat="card in houseHand.hand" watch src={{card.image}}></div>
+		<p>Total: <span ng-show="houseHand.handSum">{{ houseHand.handSum }}</span></p>
+		<br>
+		<!--<img src="./assets/images/WPcasino.png" alt="WP watermark" id="WPlogo">-->
+		<br>
+		<div id="deck" watch>
+			Remaining Cards: {{ deck.remaining }} Discard Pile: {{ discardPile.length }}
+		</div>
+		<br>
+		<p>Wins: {{playerHand.wins}}, Losses: {{ playerHand.losses }}</p>
+		<br>
+		<p>Your Hand</p>
+		<p>Total: <span ng-show="playerHand.handSum">{{ playerHand.handSum }}</span></p>
+		<div>
+			<button type="button" ng-click="drawCard(deck)" ng-disabled="isDisabled">Hit me!</button>&nbsp
+			<button type="button" ng-click="stay(playerHand.hand)">I'm staying</button>
+			<span ng-if="playerHand.handSum === 21"><--!!!!!</span> 
+		</div>
+		<div id="player"><img ng-repeat="card in playerHand.hand" watch src={{card.image}}></div>
+		<br>
+		<br>
+	</div>
+</div>
+
+<!--"http://deckofcardsapi.com/static/img/AD.png" fix this image maybe just use this one "http://deckofcardsapi.com/static/img/AH.png"-->

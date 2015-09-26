@@ -1,10 +1,11 @@
 (function () {
-    "use strict";
+	"use strict";
 
-    angular.module('app')
-        .controller('homeController', function ($scope) {
-            $scope.test = "test";
-        });
+	angular.module('app')
+		.controller('homeController', function ($scope) {
 
+			$scope.test = "test";
+
+		});
 
 } ());

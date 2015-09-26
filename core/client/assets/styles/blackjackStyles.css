@@ -1,0 +1,42 @@
+/** {
+	border: 1px dashed red;
+}*/
+
+#view {
+	height: 1100px;
+	width: 95%;
+	background-color: darkgreen;
+	color: white;
+}
+
+#piles {
+	display: flex;
+	flex-direction: column;
+}
+
+#piles p,
+#piles div {
+	display: flex;
+	justify-content: center;
+}
+
+#discardPile {
+}
+
+#deck {
+}
+
+#WPlogo {
+}
+
+#house,
+#player {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#house img,
+#player img {
+	display: inline;
+}
