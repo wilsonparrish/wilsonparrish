@@ -83,7 +83,7 @@
                         handSum = handSum + 11;
                     }
                 }
-                if (handSum >= 21) {
+                if ( handSum >= 21) {
                     $scope.isDisabled = true;
                 }
                 return handSum;
