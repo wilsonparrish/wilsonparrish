@@ -83,12 +83,54 @@
                         handSum = handSum + 11;
                     }
                 }
-                if ( handSum >= 21) {
+                if (handSum >= 21) {
                     $scope.isDisabled = true;
                 }
                 return handSum;
             };
             
+            
+
+            var playHand = function () {
+                // ************* Hands begin at and return to this point ************ //
+                //burn a card, send to discardPile
+                dealCard($scope.deck, $scope.discardPile);
+                //deal house 1st card face down
+                dealCard($scope.deck, $scope.houseHand.hand);
+                //deal player 1st card
+                dealCard($scope.deck, $scope.playerHand.hand);
+                //deal house 2nd card face up
+                dealCard($scope.deck, $scope.houseHand.hand);
+                //deal player 2nd card 
+                dealCard($scope.deck, $scope.playerHand.hand)
+                
+                //player hits?
+                $scope.drawCard = function (deck) {
+                    if (deck.remaining === 0) {
+                        cardsService.getDeck().then(function (res) {
+                            $scope.deck = res.data;
+                            console.log(res.data);
+                            shuffle($scope.deck.deck_id);
+                            $scope.discardPile = [];
+                        })
+                    }
+                    cardsService.drawCard(deck.deck_id).then(function (res) {
+                        $scope.playerHand.hand.push(res.data.cards[0]);
+                        $scope.playerHand.handSum = handSummer($scope.playerHand.hand);
+                        console.log($scope.playerHand);
+                        $scope.deck = res.data;
+                    })
+                };
+            
+                //if player stays, decide if house hits
+                
+                $scope.stay = function (hand) {
+                    hand.handSum = handSummer(hand);
+                    resolveHand();
+                };
+            
+                //resolve, and discard both hands to discard pile
+            }
             //resolves hand
             var resolveHand = function () {
 
@@ -106,7 +148,7 @@
                         $scope.houseHand.handSum = handSummer($scope.houseHand.hand);
                         setTimeout(function () {
                             resolveHand();
-                        }, 2000);
+                        }, 1000);
                         return
                     } else if ($scope.houseHand.handSum > 21) {
                         alert("You won! House hand total was " + $scope.houseHand.handSum);
@@ -131,40 +173,6 @@
                 $scope.isDisabled = false;
                 return playHand();
             };
-
-
-            var playHand = function () {
-                // ************* Hands begin at and return to this point ************ //
-                //burn a card, send to discardPile
-                dealCard($scope.deck, $scope.discardPile);
-                //deal house 1st card face down
-                dealCard($scope.deck, $scope.houseHand.hand);
-                //deal player 1st card
-                dealCard($scope.deck, $scope.playerHand.hand);
-                //deal house 2nd card face up
-                dealCard($scope.deck, $scope.houseHand.hand);
-                //deal player 2nd card 
-                dealCard($scope.deck, $scope.playerHand.hand)
-                
-                //player hits?
-                $scope.drawCard = function (deck) {
-                    cardsService.drawCard(deck.deck_id).then(function (res) {
-                        $scope.playerHand.hand.push(res.data.cards[0]);
-                        $scope.playerHand.handSum = handSummer($scope.playerHand.hand);
-                        console.log($scope.playerHand);
-                        $scope.deck = res.data;
-                    })
-                };
-            
-                //if player stays, decide if house hits
-                
-                $scope.stay = function (hand) {
-                    hand.handSum = handSummer(hand);
-                    resolveHand();
-                };
-            
-                //resolve, and discard both hands to discard pile
-            }
 
         });
 
