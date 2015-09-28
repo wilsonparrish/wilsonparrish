@@ -88,8 +88,8 @@
                 }
                 return handSum;
             };
-            
-            
+
+
 
             var playHand = function () {
                 // ************* Hands begin at and return to this point ************ //

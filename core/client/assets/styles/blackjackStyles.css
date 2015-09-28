@@ -3,8 +3,9 @@
 }*/
 
 #view {
-	height: 1100px;
+	height: 800px;
 	width: 95%;
+	margin: 0 auto;
 	background-color: darkgreen;
 	color: white;
 }
@@ -39,4 +40,6 @@
 #house img,
 #player img {
 	display: inline;
+	height: 150px;
+	margin-top: 10px;;
 }
