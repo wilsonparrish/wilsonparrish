@@ -3,11 +3,15 @@
 }*/
 
 #view {
-	height: 800px;
+	height: 700px;
 	width: 95%;
 	margin: 0 auto;
-	background-color: darkgreen;
-	color: white;
+	/*background-color: darkgreen;*/
+	background-color: #eee;
+	/*color: #eee;*/
+	font-weight: bold;
+	border-radius: 10px;
+	color: #000;
 }
 
 #piles {
@@ -30,6 +34,15 @@
 #WPlogo {
 }
 
+button {
+	font-weight: bold;
+}
+
+/*.buttonHighlight{
+	padding: 3px;
+	background-color: yellow;
+}*/
+
 #house,
 #player {
 	display: flex;
@@ -41,5 +54,6 @@
 #player img {
 	display: inline;
 	height: 150px;
+	width: 107.778px; 
 	margin-top: 10px;;
 }

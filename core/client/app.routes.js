@@ -11,7 +11,7 @@
                     templateUrl: 'components/home/home.client.template.html',
                     controller: 'homeController'
                 })
-                .state('blackjack', {
+                .state('home.blackjack', {
                     url: '/blackjack',
                     templateUrl: 'modules/blackjack/blackjackTemplate.html',
                     controller: 'blackjackCtrl'

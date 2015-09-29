@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Wilson Parrish</title>
-        <link rel="stylesheet" href="assets/styles/homeStyles.css">
-        <link rel="stylesheet" href="assets/styles/blackjackStyles.css">
-        <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>Wilson Parrish</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles/homeStyles.css">
+    <link rel="stylesheet" href="assets/styles/blackjackStyles.css">
+    <link rel="stylesheet" href="assets/styles/flicker.css">
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+</head>
 
-    <body ng-app="app">
-        <h3>Wilson Parrish! That's me.</h3>
-        
-        <button ui-sref="blackjack">PLAY SOME BLACKJACK DUDE</button>
-        <p>I made this using the <a href="deckofcardsapi.com">'deckofcards'</a> api in about 8 hours one night.  It's made from javascript within the angular framework.  Knock yourself out.</p>
-        <div id="mainView" ui-view></div>
-        
-        <!-- Dependencies -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-sanitize.js"></script>
-        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-        <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
-        <script src="app.module.js"></script>
-        <script src="app.routes.js"></script>
-        <script src="components/home/home.client.controller.js"></script>
-        <script src="modules/blackjack/blackjackCtrl.js"></script>
-        <script src="services/cardsService.js"></script>
-    </body>
+<body ng-app="app">
+    
+    <div id="mainView" ui-view></div>
+    
+    <!-- Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-sanitize.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.routes.js"></script>
+    <script src="components/home/home.client.controller.js"></script>
+    <script src="modules/blackjack/blackjackCtrl.js"></script>
+    <script src="services/cardsService.js"></script>
+</body>
 
 </html>

@@ -1,14 +1,52 @@
 body {
 	height: 100%;
-	width: 100%;
-	font-family: 'Poiret One', cursive;
+	width: 90%;
+	margin: 0 auto;
+	/*font-family: 'Poiret One', cursive;*/
+	font-family: 'Inconsolata', ;
 	box-sizing: border-box;
+	background-color:black;
+	color:  lawngreen;
 }
 
+div .header{
+	display: flex;
+	justify-content: center;	
+}
+
+h3{
+	
+}
+
+/* unvisited link */
+a:link {
+    color: purple;
+	text-decoration: none;
+}
+/* visited link */
+a:visited {
+    color: darkgrey;
+}
+/* mouse over link */
+a:hover {
+   	text-decoration: underline;
+}
+/* selected link */
+a:active {
+    color: slategray;
+}
 #mainView {
 	margin-top: 10px;
 }
-
+#homeUIView{
+	margin-top: 10px;
+}
 p {
 	font-size: 16px;
+}
+
+.showcase{
+	padding: 10px;
+	/*background-color: #eee;*/
+	/*border-radius: 10px;*/
 }

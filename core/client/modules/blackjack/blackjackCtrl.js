@@ -37,6 +37,7 @@
                         console.log(res.data);
                         shuffle($scope.deck.deck_id);
                         $scope.discardPile = [];
+                        // return dealCard(deck, hand);
                     })
                 }
                 cardsService.drawCard(deck.deck_id).then(function (res) {
@@ -44,6 +45,10 @@
                         res.data.cards[0].image = "http://deckofcardsapi.com/static/img/AH.png";
                     }
                     hand.push(res.data.cards[0]);
+                    if ($scope.houseHand.hand.length === 1) {
+                        $scope.houseHand.hand[0].actualImage = $scope.houseHand.hand[0].image;
+                        $scope.houseHand.hand[0].image = "./assets/images/cardBack.png";
+                    }
                     $scope.deck = res.data;
                     console.log(res.data);
                     if ($scope.playerHand.hand.length === 2) {
@@ -104,6 +109,10 @@
                 //deal player 2nd card 
                 dealCard($scope.deck, $scope.playerHand.hand)
                 
+                // if($scope.playerHand.hand.length === 0 || $scope.houseHand.hand.length === 0){
+                //     playHand();
+                // }  //I want it to check and make sure cards have been dealt
+                
                 //player hits?
                 $scope.drawCard = function (deck) {
                     if (deck.remaining === 0) {
@@ -112,6 +121,7 @@
                             console.log(res.data);
                             shuffle($scope.deck.deck_id);
                             $scope.discardPile = [];
+                            // return $scope.drawcard(deck);
                         })
                     }
                     cardsService.drawCard(deck.deck_id).then(function (res) {
@@ -126,6 +136,7 @@
                 
                 $scope.stay = function (hand) {
                     hand.handSum = handSummer(hand);
+                    $scope.houseHand.hand[0].image = $scope.houseHand.hand[0].actualImage;
                     resolveHand();
                 };
             
