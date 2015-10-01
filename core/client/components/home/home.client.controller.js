@@ -8,10 +8,10 @@
 			
 			setInterval(function(){
 				$scope.blink = $scope.blink === false ? true: false;
-				console.log($scope.blink);
+				// console.log($scope.blink);
 				$scope.$apply();
 			}, 700);
-
+			
 		});
 
 } ());

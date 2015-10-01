@@ -9,7 +9,8 @@ var config = require('./config.js'),
     methodOverride = require('method-override'),
     session = require('express-session'),
     flash = require('connect-flash'),
-    passport = require('passport');
+    passport = require('passport'),
+    sass = require('node-sass');
 
 
 module.exports = function () {
@@ -54,7 +55,7 @@ module.exports = function () {
     app.use(flash());
     app.use(passport.initialize());
     app.use(passport.session());
-
+    
 
     // HERE WE INCLUDE THE ROUTES
     // we run the router objects giving them the express app

@@ -14,6 +14,20 @@ div .header{
 	justify-content: center;	
 }
 
+.pic {
+	max-height: 200px;
+	max-width: 200px;
+	cursor: pointer;
+}
+
+.screenshot {
+	max-width: 300px;
+}
+
+.screenshot a:hover {
+	box-shadow: lawngreen;	
+}
+
 h3{
 	
 }
