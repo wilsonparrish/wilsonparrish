@@ -47,7 +47,7 @@
                     hand.push(res.data.cards[0]);
                     if ($scope.houseHand.hand.length === 1) {
                         $scope.houseHand.hand[0].actualImage = $scope.houseHand.hand[0].image;
-                        $scope.houseHand.hand[0].image = "./assets/images/cardBack.png";
+                        $scope.houseHand.hand[0].image = "http://i296.photobucket.com/albums/mm181/Wilson_Parrish/cardBack_zpsplwjc9sq.png?1443816642910&1443816643306";
                     }
                     $scope.deck = res.data;
                     console.log(res.data);
